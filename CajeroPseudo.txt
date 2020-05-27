@@ -1,0 +1,43 @@
+Algoritmo Cajero
+	Repetir
+		saldoActual = 100
+		Escribir 'Por favor ingrese su pin secreto:'
+		Leer pin
+		Mientras pin!=1520 Hacer
+			Escribir 'Pin incorrecto'
+		FinMientras
+		Borrar Pantalla
+		Escribir 'Bienvenido al servicio de cajero automático'
+		Escribir '   1. Consultar saldo'
+		Escribir '   2. Depositar'
+		Escribir '   3. Retirar'
+		Escribir '   4. Salir'
+		Escribir 'Digite su opción'
+		Leer opc
+		Segun opc  Hacer
+			1:
+				Escribir 'Tu saldo actual es de: ',saldoActual
+			2:
+				Escribir '¿Cuánto dinero desea depositar?'
+				Leer cantidad
+				Escribir 'Has depositado exitosamente: ',cantidad
+				Escribir 'Tu saldo actual es de: ',saldoActual
+				
+			3:
+				Escribir '¿Cuánto dinero desea retirar?'
+				Leer cantidad
+				Si cantidad<=saldoActual Entonces
+					saldoActual <- saldoActual-cantidad
+					Escribir 'Su saldo actual es de:',saldoActual
+				SiNo
+					Escribir 'No tienes suficiente dinero'
+				FinSi
+			4:
+				Escribir 'Gracias por usar mi cajero automático'
+			De Otro Modo:
+				Escribir 'Opción no válida'
+		FinSegun
+		Escribir 'Presione enter para continuar'
+		Esperar Tecla
+	Hasta Que OP=4
+FinAlgoritmo
